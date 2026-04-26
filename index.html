@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moss Test Game</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: black;
+        }
+        #myCanvas{
+            position: absolute;
+            image-rendering:crisp-edges;
+            width:auto;
+            left:50%;
+            transform: translate(-50%);
+            height: 100%;
+            z-index:1000;
+        }
+        img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    -->
+    <img src="./images/bg.PNG" id="bg"/>
+    <img src="./images/basic.png" width="250px" height="350px" id="basic"/>
+    <img src="./images/earthquake.png" width="250px" height="350px" id="earthquake"/>
+    <img src="./images/drain.png" width="250px" height="350px" id="drain"/>
+    <img src="./images/ln.png" width="250px" height="350px" id="ln"/>
+    <img src="./images/genmat.png" width="250px" height="350px" id="genmat"/>
+    <img src="./images/transform.png" width="250px" height="350px" id="transform"/>
+    <img src="./images/dog.png" width="250px" height="350px" id="dog"/>
+    <img src="./images/gato.png" width="250px" height="350px" id="gato"/>
+    <img src="./images/galinha.PNG" width="250px" height="350px" id="galinha"/>
+    <img src="./images/dude.png" width="250px" height="350px" id="dude"/>
+    <img src="./images/bisalo.png" width="250px" height="350px" id="bisalo"/>
+    <img src="./images/raco.png" width="250px" height="350px" id="raco"/>
+    <!--
+    -->
+    <canvas id="myCanvas"></canvas>
+    <script src="./moss.js"></script>
+    <script src="./globals.js"></script>
+    <script src="./cards.js"></script>
+    <script src="./drawCards.js"></script>
+    <script src="./resetGame.js"></script>
+    <script src="./attacks.js"></script>
+    <script src="./enemies.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

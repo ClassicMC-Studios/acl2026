@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moss Test Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            overflow: hidden;
+            font-family: 'Cinzel', serif;
+        }
+
+        #myCanvas {
+            position: absolute;
+            image-rendering: crisp-edges;
+            width: auto;
+            left: 50%;
+            transform: translate(-50%);
+            height: 100%;
+            z-index: 1000;
+        }
+
+        img {
+            display: none;
+        }
+
+        /* Ambient background layers behind canvas */
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .bg-gradient {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 110%, #1a0a00 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 20% -10%, #0d1a00 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 80% -10%, #000d1a 0%, transparent 60%),
+                #040404;
+        }
+
+        /* Scanline overlay for retro effect */
+        .scanlines {
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.08) 2px,
+                rgba(0,0,0,0.08) 4px
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient background layers (behind canvas) -->
+    <div class="bg-layer bg-gradient"></div>
+    <div class="bg-layer scanlines"></div>
+
+    <!--
+        MENU IMAGE ASSETS
+    -->
+    <img src="./images/map.png" id="menuBg"/>
+    <img src="./images/logo.png" id="logo"/>
+
+    <!--
+        BASE AREA - CANVAS
+    -->
+    <canvas id="myCanvas"></canvas>
+
+    <script src="./moss.js"></script>
+    <script src="./main_menu.js"></script>
+</body>
+</html>
